@@ -52,7 +52,7 @@ Make sure you have the following libraries installed in **Arduino IDE**:
 - **Display Update:** Updates the LCD every second with time, date, and weekday.
 
 ## Clock Demo
-![alt_text, width="200"](demo.JPG) 
+![alt_text, width="200"](demo.jpg) 
 
 
 ## License
