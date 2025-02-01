@@ -19,8 +19,7 @@ This project uses an **ESP8266 NodeMCU** to create a **12-hour format NTP clock*
 | Jumper Wires           | As needed|
 
 ## Circuit Diagram
-![Schematic Diagram](#)  
-*Link to be added*
+![alt_text, width="200"](/image/sc.JPG)
 
 ## Connections
 
@@ -73,3 +72,12 @@ Feel free to fork this project and contribute!
 - Make sure your **router** is working correctly.
 
 For further assistance, feel free to ask! 🚀
+
+## 🔗 Connect with Me
+[🌐 Website](https://electroiot.in)  
+[✉️ Email](mailto:electroiot@hotmail.com)  
+[📺 YouTube](https://www.youtube.com/@ElectroIoT-IN)  
+[🔬 Hackster.io](https://www.hackster.io/Manoranjan2050)  
+[📖 Instructables](https://www.instructables.com/member/ElectroIoTIN)  
+
+
