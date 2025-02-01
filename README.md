@@ -52,8 +52,8 @@ Make sure you have the following libraries installed in **Arduino IDE**:
 - **Display Update:** Updates the LCD every second with time, date, and weekday.
 
 ## Clock Demo
-![Clock Display](#)  
-*Link to be added*
+![alt_text, width="200"](demo.JPG) 
+
 
 ## License
 This project is **open-source** and free to use.
