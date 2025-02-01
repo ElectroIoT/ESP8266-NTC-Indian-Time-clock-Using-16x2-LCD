@@ -1,32 +1,48 @@
+#include <Arduino.h>
 #include <Wire.h>
+#include <SPI.h>
+#include <TFT_eSPI.h>  // TFT library for ST7789
+#include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
+
+// WiFi credentials
+const char* ssid = "FTTD";
+const char* password = "M@$ter@2050";
+
+// NTP setup
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "pool.ntp.org", 19800, 60000);  // IST (UTC+5:30)
+
+// TFT Display
+TFT_eSPI tft = TFT_eSPI();
 
 void setup() {
     Serial.begin(115200);
-    while (!Serial); // Wait for serial monitor to open
-    Serial.println("\nI2C Scanner Initialized...");
+    WiFi.begin(ssid, password);
+    Serial.print("Connecting to WiFi...");
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("Connected!");
     
-    Wire.begin();
+    timeClient.begin();
+    
+    tft.init();
+    tft.setRotation(2);
+    tft.fillScreen(TFT_BLACK);
 }
 
 void loop() {
-    Serial.println("Scanning...");
-    byte count = 0;
+    timeClient.update();
+    String currentTime = timeClient.getFormattedTime();
     
-    for (byte address = 1; address < 127; address++) {
-        Wire.beginTransmission(address);
-        if (Wire.endTransmission() == 0) {
-            Serial.print("Found I2C device at address 0x");
-            Serial.println(address, HEX);
-            count++;
-            delay(10);
-        }
-    }
-
-    if (count == 0) {
-        Serial.println("No I2C devices found!");
-    } else {
-        Serial.println("Scan Complete.");
-    }
+    tft.fillScreen(TFT_BLACK);
+    tft.setTextColor(TFT_WHITE, TFT_BLACK);
+    tft.setTextSize(3);
+    tft.setCursor(40, 50);
+    tft.print(currentTime);
     
-    delay(5000); // Scan every 5 seconds
+    delay(1000);
 }

@@ -5,8 +5,8 @@
 #include <NTPClient.h>
 
 // WiFi Credentials
-const char* ssid     = "ssid";
-const char* password = "password";
+const char* ssid     = "FTTD";
+const char* password = "M@$ter@2050";
 
 // Set up I2C LCD (16x2, Address: 0x27 or 0x3F)
 LiquidCrystal_I2C lcd(0x3F, 16, 2);
