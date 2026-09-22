@@ -1,8 +1,8 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f766e"/>
-      <stop offset="100%" stop-color="#0c4a6e"/>
+      <stop offset="0%" stop-color="#E68E1F"/>
+      <stop offset="100%" stop-color="#2F4468"/>
     </linearGradient>
     <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#134e13"/>
@@ -47,11 +47,11 @@
   </g>
 
   <!-- WiFi signal (top-right, indicating NTP sync) -->
-  <g stroke="#fde047" stroke-width="10" stroke-linecap="round" fill="none">
+  <g stroke="#FFB600" stroke-width="10" stroke-linecap="round" fill="none">
     <path d="M 372 128 A 64 64 0 0 1 452 128"/>
     <path d="M 390 150 A 38 38 0 0 1 434 150"/>
   </g>
-  <circle cx="412" cy="168" r="9" fill="#fde047"/>
+  <circle cx="412" cy="168" r="9" fill="#FFB600"/>
 
   <!-- India tricolor accent bar -->
   <g>
