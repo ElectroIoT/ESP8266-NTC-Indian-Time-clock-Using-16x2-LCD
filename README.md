@@ -61,6 +61,55 @@ For those who already use PlatformIO / VS Code:
 
 Both versions are kept in sync feature-for-feature (same pin config, time format, timezone options, custom icons) — pick whichever toolchain you're comfortable with.
 
+## Changing WiFi Credentials & 24-Hour Format
+
+### If you're using the Arduino IDE version
+Open [`Code/Clock_Close/code/code.ino`](Code/Clock_Close/code/code.ino) and edit the lines near the top of the file:
+
+**WiFi credentials** (lines 9-10):
+```cpp
+const char* ssid     = "your_SSID";
+const char* password = "your_PASSWORD";
+```
+Replace `"your_SSID"` and `"your_PASSWORD"` with your network's name and password, keeping the quotes. WiFi names/passwords are case-sensitive — copy them exactly.
+
+**24-hour format** (line 22):
+```cpp
+#define USE_24HR_FORMAT 0
+```
+- `0` → 12-hour clock with AM/PM (e.g. `08:26:57 AM`)
+- `1` → 24-hour clock, no AM/PM (e.g. `20:26:57`)
+
+Just change the `0` to `1` (or back) and re-upload.
+
+After editing, click **Upload** in the Arduino IDE (or press `Ctrl+U`) to flash the board with your changes.
+
+### If you're using the PlatformIO version
+Open [`include/config.h`](include/config.h) and edit:
+
+**WiFi credentials**:
+```cpp
+#define WIFI_SSID     "your_SSID"
+#define WIFI_PASSWORD "your_PASSWORD"
+```
+
+**24-hour format**:
+```cpp
+#define USE_24HR_FORMAT 0   // 0 = 12-hour AM/PM, 1 = 24-hour
+```
+
+Then rebuild and reflash:
+```bash
+pio run -e nodemcuv2 -t upload
+```
+(use `-e d1_mini` instead of `-e nodemcuv2` if you're on a Wemos D1 Mini)
+
+### Notes
+- Only 2.4GHz WiFi networks work — the ESP8266 cannot connect to 5GHz-only networks.
+- Credentials are stored in plain text in the source file, since the ESP8266 has no secure storage. Don't commit your real WiFi password if you push this repo to a public GitHub fork — keep `config.h` / the `.ino` with placeholder values in git, and only fill in real credentials locally before uploading.
+- The clock line automatically switches between `HH:MM:SS AM/PM` and `HH:MM:SS` layouts based on `USE_24HR_FORMAT` — no other changes needed.
+- To change the **timezone** at the same time, see the offset table inside `config.h` / the `.ino` file (just above the `TIMEZONE_OFFSET_SEC` line).
+
 ## How the Code Works
 - **WiFi Connection:** Connects to WiFi and auto-reconnects if the link drops.
 - **NTP Synchronization:** Uses the ESP8266 core's built-in SNTP (`configTime`) against `pool.ntp.org`.
@@ -115,6 +164,7 @@ Feel free to fork this project and contribute!
 
 ## 🔗 Connect with Me
 [🌐 Website](https://electroiot.in)
+[🌐 manoranjan2050.dev](https://manoranjan2050.dev)
 [✉️ Email](mailto:electroiot@hotmail.com)
 [📺 YouTube](https://www.youtube.com/@ElectroIoT-IN)
 [🔬 Hackster.io](https://www.hackster.io/Manoranjan2050)
