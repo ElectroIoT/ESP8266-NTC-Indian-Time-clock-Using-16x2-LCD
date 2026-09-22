@@ -1,0 +1,104 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#134e13"/>
+      <stop offset="100%" stop-color="#0a2e0a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+  <circle cx="960" cy="80" r="220" fill="url(#glow)"/>
+
+  <!-- India tricolor accent bar -->
+  <rect x="0" y="0" width="10" height="320" fill="#f97316"/>
+  <rect x="10" y="0" width="6" height="320" fill="#f1f5f9"/>
+  <rect x="16" y="0" width="6" height="320" fill="#16a34a"/>
+
+  <!-- LCD module graphic -->
+  <g transform="translate(70,80)">
+    <rect x="0" y="0" width="300" height="160" rx="14" fill="#e2e8f0"/>
+    <rect x="0" y="0" width="300" height="160" rx="14" fill="none" stroke="#94a3b8" stroke-width="3"/>
+    <rect x="20" y="20" width="260" height="120" rx="6" fill="url(#screen)"/>
+
+    <!-- clock face -->
+    <circle cx="90" cy="80" r="42" fill="none" stroke="#4ade80" stroke-width="6"/>
+    <line x1="90" y1="80" x2="90" y2="52" stroke="#4ade80" stroke-width="6" stroke-linecap="round"/>
+    <line x1="90" y1="80" x2="110" y2="92" stroke="#4ade80" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="90" cy="80" r="4" fill="#4ade80"/>
+
+    <!-- digital readout -->
+    <text x="205" y="72" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="700" fill="#4ade80" text-anchor="middle">08:26:57</text>
+    <text x="205" y="98" font-family="Consolas, 'Courier New', monospace" font-size="14" fill="#86efac" text-anchor="middle">22/09/2026 Tue</text>
+
+    <!-- pin row -->
+    <g fill="#cbd5e1">
+      <rect x="30" y="150" width="5" height="10"/>
+      <rect x="45" y="150" width="5" height="10"/>
+      <rect x="60" y="150" width="5" height="10"/>
+      <rect x="75" y="150" width="5" height="10"/>
+      <rect x="90" y="150" width="5" height="10"/>
+      <rect x="105" y="150" width="5" height="10"/>
+      <rect x="120" y="150" width="5" height="10"/>
+      <rect x="135" y="150" width="5" height="10"/>
+      <rect x="150" y="150" width="5" height="10"/>
+      <rect x="165" y="150" width="5" height="10"/>
+      <rect x="180" y="150" width="5" height="10"/>
+      <rect x="195" y="150" width="5" height="10"/>
+      <rect x="210" y="150" width="5" height="10"/>
+      <rect x="225" y="150" width="5" height="10"/>
+      <rect x="240" y="150" width="5" height="10"/>
+      <rect x="255" y="150" width="5" height="10"/>
+    </g>
+
+    <!-- WiFi arcs -->
+    <g stroke="#fde047" stroke-width="7" stroke-linecap="round" fill="none">
+      <path d="M 240 -6 A 46 46 0 0 1 300 -6" opacity="0.9"/>
+      <path d="M 253 12 A 27 27 0 0 1 287 12" opacity="0.9"/>
+    </g>
+    <circle cx="270" cy="24" r="6" fill="#fde047"/>
+  </g>
+
+  <!-- Title block -->
+  <g transform="translate(430,0)">
+    <text x="0" y="120" font-family="'Segoe UI', Arial, sans-serif" font-size="46" font-weight="800" fill="#f8fafc">ESP8266 NTP Clock</text>
+    <text x="0" y="160" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="500" fill="#a7f3d0">16x2 I2C LCD &#183; WiFi Time Sync &#183; Any Timezone</text>
+
+    <!-- badges -->
+    <g font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600">
+      <g transform="translate(0,190)">
+        <rect width="118" height="34" rx="17" fill="#134e4a" stroke="#2dd4bf" stroke-width="1.5"/>
+        <text x="59" y="22" fill="#5eead4" text-anchor="middle">Arduino IDE</text>
+      </g>
+      <g transform="translate(130,190)">
+        <rect width="130" height="34" rx="17" fill="#134e4a" stroke="#2dd4bf" stroke-width="1.5"/>
+        <text x="65" y="22" fill="#5eead4" text-anchor="middle">PlatformIO</text>
+      </g>
+      <g transform="translate(272,190)">
+        <rect width="112" height="34" rx="17" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="56" y="22" fill="#fde68a" text-anchor="middle">NTP Sync</text>
+      </g>
+      <g transform="translate(396,190)">
+        <rect width="150" height="34" rx="17" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="75" y="22" fill="#fde68a" text-anchor="middle">12/24-Hour</text>
+      </g>
+      <g transform="translate(0,236)">
+        <rect width="180" height="34" rx="17" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="90" y="22" fill="#fde68a" text-anchor="middle">Global Timezones</text>
+      </g>
+    </g>
+  </g>
+</svg>

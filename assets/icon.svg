@@ -1,0 +1,62 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#134e13"/>
+      <stop offset="100%" stop-color="#0a2e0a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- LCD module body -->
+  <rect x="86" y="146" width="340" height="220" rx="18" fill="#e2e8f0"/>
+  <rect x="86" y="146" width="340" height="220" rx="18" fill="none" stroke="#94a3b8" stroke-width="4"/>
+
+  <!-- LCD green screen -->
+  <rect x="112" y="172" width="288" height="168" rx="8" fill="url(#screen)"/>
+
+  <!-- Clock face on screen -->
+  <circle cx="200" cy="256" r="58" fill="none" stroke="#4ade80" stroke-width="8"/>
+  <line x1="200" y1="256" x2="200" y2="216" stroke="#4ade80" stroke-width="8" stroke-linecap="round"/>
+  <line x1="200" y1="256" x2="228" y2="270" stroke="#4ade80" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="200" cy="256" r="6" fill="#4ade80"/>
+
+  <!-- Digital time readout -->
+  <text x="336" y="248" font-family="Consolas, 'Courier New', monospace" font-size="30" font-weight="700" fill="#4ade80" text-anchor="middle">10:42</text>
+  <text x="336" y="284" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#86efac" text-anchor="middle">IST</text>
+
+  <!-- Mounting pin row (bottom of LCD) -->
+  <g fill="#cbd5e1">
+    <rect x="140" y="360" width="6" height="14"/>
+    <rect x="160" y="360" width="6" height="14"/>
+    <rect x="180" y="360" width="6" height="14"/>
+    <rect x="200" y="360" width="6" height="14"/>
+    <rect x="220" y="360" width="6" height="14"/>
+    <rect x="240" y="360" width="6" height="14"/>
+    <rect x="260" y="360" width="6" height="14"/>
+    <rect x="280" y="360" width="6" height="14"/>
+    <rect x="300" y="360" width="6" height="14"/>
+    <rect x="320" y="360" width="6" height="14"/>
+    <rect x="340" y="360" width="6" height="14"/>
+    <rect x="360" y="360" width="6" height="14"/>
+  </g>
+
+  <!-- WiFi signal (top-right, indicating NTP sync) -->
+  <g stroke="#fde047" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M 372 128 A 64 64 0 0 1 452 128"/>
+    <path d="M 390 150 A 38 38 0 0 1 434 150"/>
+  </g>
+  <circle cx="412" cy="168" r="9" fill="#fde047"/>
+
+  <!-- India tricolor accent bar -->
+  <g>
+    <rect x="86" y="392" width="340" height="10" fill="#f97316"/>
+    <rect x="86" y="402" width="340" height="10" fill="#f1f5f9"/>
+    <rect x="86" y="412" width="340" height="10" fill="#16a34a"/>
+  </g>
+</svg>
